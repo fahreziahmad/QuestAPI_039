@@ -6,6 +6,9 @@
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d262a61a-e72c-42f6-91aa-583cfb28305f" />
 
+
+
+
 lanjut prak 2
 <img width="441" height="936" alt="image" src="https://github.com/user-attachments/assets/7429aa1f-f393-4a70-bb88-78b1734661a5" />
 <img width="403" height="943" alt="image" src="https://github.com/user-attachments/assets/3acfe984-76eb-44f3-9860-7caeeaf8342b" />
@@ -14,6 +17,8 @@ lanjut prak 2
 <img width="434" height="916" alt="image" src="https://github.com/user-attachments/assets/f87f5222-1bf1-4d00-ab0e-4e71491ab4d8" />
 <img width="444" height="930" alt="image" src="https://github.com/user-attachments/assets/6dd43ea1-49da-4861-885c-b89b8106c829" />
 <img width="435" height="896" alt="image" src="https://github.com/user-attachments/assets/a6875ef2-acbe-4de1-8c17-273492eec4f2" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7dae8463-deed-4055-ab9b-b4e787835c24" />
+
 
 
 
