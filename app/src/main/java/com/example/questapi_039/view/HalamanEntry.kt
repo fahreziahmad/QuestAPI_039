@@ -54,3 +54,22 @@ fun EntrySiswaScreen(
         )
     }
 }
+
+@Composable
+fun EntrySiswaBody(
+    uiStateSiswa: UIStateSiswa,
+    onSiswaValueChange: (DetailSiswa) -> Unit,
+    onSaveClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Column(modifier = modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
+        FormTambahSiswa(detailSiswa = uiStateSiswa.detailSiswa, onValueChange = onSiswaValueChange)
+        Button(
+            onClick = onSaveClick,
+            enabled = uiStateSiswa.isEntryValid,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Simpan")
+        }
+    }
+}
