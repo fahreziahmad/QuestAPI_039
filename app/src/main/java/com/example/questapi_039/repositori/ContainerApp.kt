@@ -35,3 +35,22 @@ class DefaultContainerApp : ContainerApp {
         )
         .client(klien)
         .build()
+
+    private val retrofitService: ServiceApiSiswa by lazy {
+        retrofit.create(ServiceApiSiswa::class.java)
+    }
+
+    override val repositoryDataSiswa: RepositoryDataSiswa by lazy {
+        JaringanRepositoryDataSiswa(retrofitService)
+    }
+}
+
+class AplikasiDataSiswa : Application() {
+    lateinit var container: ContainerApp
+        private set
+
+    override fun onCreate() {
+        super.onCreate()
+        container = DefaultContainerApp()
+    }
+}
