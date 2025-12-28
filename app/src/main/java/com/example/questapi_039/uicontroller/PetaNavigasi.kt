@@ -40,3 +40,27 @@ fun DataSiswaApp(
             )
         }
 
+        // Entry Screen
+        composable(DestinasiEntry.route) {
+            EntrySiswaScreen(
+                navigateBack = {
+                    navController.popBackStack()
+                }
+            )
+        }
+
+        // Detail Screen - FIXED PARAMETERS AND itemIdArg
+        composable(
+            route = DestinasiDetail.routeWithArgs,
+            arguments = listOf(navArgument(DestinasiDetail.itemIdArg) {
+                type = NavType.IntType
+            })
+        ) {
+            DetailSiswaScreen(
+                navigateBack = { navController.popBackStack() },
+                // Changed from onEditClick to navigateToEdit to match the expected parameter
+                navigateToEdit = { id ->
+                    navController.navigate("${DestinasiEdit.route}/$id")
+                }
+            )
+        }
