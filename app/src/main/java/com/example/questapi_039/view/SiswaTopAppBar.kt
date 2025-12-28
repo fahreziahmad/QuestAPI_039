@@ -33,3 +33,11 @@ fun SiswaTopAppBar(
                 }
             }
         },
+        actions = {
+            // Tambahkan Tombol Refresh di pojok kanan atas
+            IconButton(onClick = onRefresh) {
+                Icon(imageVector = Icons.Default.Refresh, contentDescription = "Refresh")
+            }
+        }
+    )
+}
