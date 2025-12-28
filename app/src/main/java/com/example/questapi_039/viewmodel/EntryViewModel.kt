@@ -26,3 +26,14 @@ class EntryViewModel(private val repositoryDataSiswa: RepositoryDataSiswa) : Vie
             isEntryValid = validasiInput(detailSiswa)
         )
     }
+
+    suspend fun insertSiswa() {
+        if (validasiInput()) {
+            try {
+                repositoryDataSiswa.postDataSiswa(uiStateSiswa.detailSiswa.toDataSiswa())
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+    }
+}
