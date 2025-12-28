@@ -69,3 +69,22 @@ fun DetailSiswaScreen(
         }
     }
 }
+
+@Composable
+fun ItemDetailSiswa(siswa: DataSiswa) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
+            contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+        )
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            ComponentDetailSiswa(judul = "Nama", isinya = siswa.nama)
+            Spacer(modifier = Modifier.height(8.dp))
+            ComponentDetailSiswa(judul = "Alamat", isinya = siswa.alamat)
+            Spacer(modifier = Modifier.height(8.dp))
+            ComponentDetailSiswa(judul = "Telepon", isinya = siswa.telpon)
+        }
+    }
+}
