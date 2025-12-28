@@ -51,3 +51,9 @@ fun DetailSiswaScreen(
                 .padding(innerPadding)
                 .padding(16.dp)
         ) {
+            when (val state = viewModel.detailUiState) {
+                is DetailUiState.Loading -> {
+                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                        CircularProgressIndicator()
+                    }
+                }
