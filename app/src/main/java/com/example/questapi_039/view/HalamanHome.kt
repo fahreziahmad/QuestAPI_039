@@ -98,3 +98,16 @@ fun HomeBody(
         is StatusUiSiswa.Error -> ErrorScreen(retryAction, modifier.fillMaxSize())
     }
 }
+
+@Composable
+fun ListSiswa(
+    siswa: List<DataSiswa>,
+    onSiswaClick: (Int) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    LazyColumn(modifier = modifier, contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        items(siswa) { item ->
+            ItemSiswa(siswa = item, modifier = Modifier.fillMaxWidth().clickable { onSiswaClick(item.id) })
+        }
+    }
+}
