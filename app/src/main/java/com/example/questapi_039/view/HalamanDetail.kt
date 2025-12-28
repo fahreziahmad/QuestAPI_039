@@ -57,3 +57,8 @@ fun DetailSiswaScreen(
                         CircularProgressIndicator()
                     }
                 }
+                is DetailUiState.Error -> {
+                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                        Text(text = "Gagal memuat data.", color = Color.Red)
+                    }
+                }
