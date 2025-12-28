@@ -13,3 +13,30 @@ import com.example.questapi_039.viewmodel.HomeViewModel
 
 fun CreationExtras.aplikasiDataSiswa(): AplikasiDataSiswa =
     (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as AplikasiDataSiswa)
+
+object PenyediaViewModel {
+    val Factory = viewModelFactory {
+        initializer {
+            HomeViewModel(aplikasiDataSiswa().container.repositoryDataSiswa)
+        }
+
+        initializer {
+            EntryViewModel(aplikasiDataSiswa().container.repositoryDataSiswa)
+        }
+
+        // Perbaikan: Masukkan ke dalam Factory dan gunakan kurung kurawal
+        initializer {
+            DetailViewModel(
+                this.createSavedStateHandle(),
+                aplikasiDataSiswa().container.repositoryDataSiswa
+            )
+        }
+
+        initializer {
+            EditViewModel(
+                this.createSavedStateHandle(),
+                aplikasiDataSiswa().container.repositoryDataSiswa
+            )
+        }
+    }
+}
