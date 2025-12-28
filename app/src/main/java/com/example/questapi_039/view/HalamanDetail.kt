@@ -88,3 +88,11 @@ fun ItemDetailSiswa(siswa: DataSiswa) {
         }
     }
 }
+
+@Composable
+fun ComponentDetailSiswa(judul: String, isinya: String) {
+    Column {
+        Text(text = judul, fontSize = 14.sp, fontWeight = FontWeight.Bold, color = Color.Gray)
+        Text(text = isinya, fontSize = 18.sp, fontWeight = FontWeight.Normal)
+    }
+}
