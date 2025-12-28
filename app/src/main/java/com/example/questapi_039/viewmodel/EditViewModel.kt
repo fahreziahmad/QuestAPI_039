@@ -21,3 +21,7 @@ class EditViewModel(
 
     var uiStateSiswa by mutableStateOf(UIStateSiswa())
         private set
+
+    // Mengambil ID dari argument navigasi menggunakan key yang benar
+    private val idSiswa: Int = checkNotNull(savedStateHandle["id"])
+
