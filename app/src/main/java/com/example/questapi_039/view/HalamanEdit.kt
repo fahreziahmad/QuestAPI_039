@@ -27,3 +27,18 @@ fun EditSiswaScreen(
                 navigateUp = navigateBack
             )
         }
+    ) { innerPadding ->
+        // Memanfaatkan fungsi Body dari HalamanEntry
+        EntrySiswaBody(
+            uiStateSiswa = viewModel.uiStateSiswa,
+            onSiswaValueChange = viewModel::updateUiState,
+            onSaveClick = {
+                coroutineScope.launch {
+                    viewModel.updateSiswa()
+                    navigateBack()
+                }
+            },
+            modifier = Modifier.padding(innerPadding)
+        )
+    }
+}
