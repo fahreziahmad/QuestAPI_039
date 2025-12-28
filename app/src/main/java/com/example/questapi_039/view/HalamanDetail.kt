@@ -24,3 +24,11 @@ fun DetailSiswaScreen(
     modifier: Modifier = Modifier,
     viewModel: DetailViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ) {
+    Scaffold(
+        topBar = {
+            SiswaTopAppBar(
+                title = "Detail Siswa",
+                canNavigateBack = true,
+                navigateUp = navigateBack
+            )
+        },
