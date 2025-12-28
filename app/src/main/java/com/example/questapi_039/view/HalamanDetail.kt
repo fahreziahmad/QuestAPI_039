@@ -44,3 +44,10 @@ fun DetailSiswaScreen(
                 }
             }
         }
+    ) { innerPadding ->
+        Column(
+            modifier = modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+                .padding(16.dp)
+        ) {
