@@ -42,3 +42,12 @@ class DetailViewModel(
             }
         }
     }
+
+    fun deleteSiswa() {
+        viewModelScope.launch {
+            try {
+                repositoryDataSiswa.hapusSatuSiswa(idSiswa)
+            } catch (e: Exception) { }
+        }
+    }
+}
