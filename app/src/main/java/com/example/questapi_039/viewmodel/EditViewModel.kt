@@ -32,3 +32,10 @@ class EditViewModel(
                 .toUIStateSiswa(isEntryValid = true) // Import di atas akan menyelesaikan error ini
         }
     }
+
+    fun updateUiState(detailSiswa: DetailSiswa) {
+        uiStateSiswa = UIStateSiswa(
+            detailSiswa = detailSiswa,
+            isEntryValid = true
+        )
+    }
