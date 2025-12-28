@@ -18,6 +18,8 @@ lanjut prak 2
 <img width="444" height="930" alt="image" src="https://github.com/user-attachments/assets/6dd43ea1-49da-4861-885c-b89b8106c829" />
 <img width="435" height="896" alt="image" src="https://github.com/user-attachments/assets/a6875ef2-acbe-4de1-8c17-273492eec4f2" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7dae8463-deed-4055-ab9b-b4e787835c24" />
+<img width="439" height="897" alt="image" src="https://github.com/user-attachments/assets/8466f652-cb50-459e-8678-0f222e558116" />
+
 
 
 
