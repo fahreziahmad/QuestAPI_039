@@ -32,3 +32,15 @@ fun DetailSiswaScreen(
                 navigateUp = navigateBack
             )
         },
+        floatingActionButton = {
+            if (viewModel.detailUiState is DetailUiState.Success) {
+                val siswa = (viewModel.detailUiState as DetailUiState.Success).dataSiswa
+                FloatingActionButton(
+                    onClick = { navigateToEdit(siswa.id) },
+                    shape = MaterialTheme.shapes.medium,
+                    modifier = Modifier.padding(16.dp)
+                ) {
+                    Icon(imageVector = androidx.compose.material.icons.Icons.Default.Edit, contentDescription = "Edit Siswa")
+                }
+            }
+        }
