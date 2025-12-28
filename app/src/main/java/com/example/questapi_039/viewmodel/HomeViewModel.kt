@@ -27,3 +27,17 @@ class HomeViewModel(private val repositoryDataSiswa: RepositoryDataSiswa) :
     init {
         loadSiswa()
     }
+
+    fun loadSiswa() {
+        viewModelScope.launch {
+            listSiswa = StatusUiSiswa.Loading
+            listSiswa = try {
+                StatusUiSiswa.Success(repositoryDataSiswa.getDataSiswa())
+            } catch (e: IOException) {
+                StatusUiSiswa.Error
+            } catch (e: HttpException) {
+                StatusUiSiswa.Error
+            }
+        }
+    }
+}
