@@ -1,2 +1,26 @@
 package com.example.questapi_039.view
 
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material3.*
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.questapi_039.modeldata.DataSiswa
+import com.example.questapi_039.viewmodel.DetailUiState
+import com.example.questapi_039.viewmodel.DetailViewModel
+import com.example.questapi_039.viewmodel.provider.PenyediaViewModel
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun DetailSiswaScreen(
+    navigateBack: () -> Unit,
+    navigateToEdit: (Int) -> Unit,
+    modifier: Modifier = Modifier,
+    viewModel: DetailViewModel = viewModel(factory = PenyediaViewModel.Factory)
+) {
