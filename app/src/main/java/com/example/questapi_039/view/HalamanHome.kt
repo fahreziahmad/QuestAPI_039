@@ -49,3 +49,26 @@ fun HomeScreen(
                 onRefresh = { viewModel.loadSiswa() } // HUBUNGKAN KE TOMBOL REFRESH
             )
         },
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = navigateToItemEntry,
+                shape = MaterialTheme.shapes.medium,
+                modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_large))
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Add,
+                    contentDescription = stringResource(R.string.entry_siswa)
+                )
+            }
+        }
+    ) { innerPadding ->
+        HomeBody(
+            statusUiSiswa = viewModel.listSiswa,
+            onSiswaClick = navigateToItemUpdate,
+            retryAction = viewModel::loadSiswa,
+            modifier = Modifier
+                .padding(innerPadding)
+                .fillMaxSize()
+        )
+    }
+}
