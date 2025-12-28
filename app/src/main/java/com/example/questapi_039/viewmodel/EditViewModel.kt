@@ -25,3 +25,10 @@ class EditViewModel(
     // Mengambil ID dari argument navigasi menggunakan key yang benar
     private val idSiswa: Int = checkNotNull(savedStateHandle["id"])
 
+    init {
+        viewModelScope.launch {
+            // Mengambil data tunggal dari repository
+            uiStateSiswa = repositoryDataSiswa.getSatuSiswa(idSiswa)
+                .toUIStateSiswa(isEntryValid = true) // Import di atas akan menyelesaikan error ini
+        }
+    }
