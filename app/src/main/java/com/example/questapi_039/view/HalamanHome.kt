@@ -32,3 +32,20 @@ fun HomeScreen(
     modifier: Modifier = Modifier,
     viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ) {
+    val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
+
+    // AUTO REFRESH: Memanggil loadSiswa setiap kali screen ini ditampilkan kembali
+    LaunchedEffect(Unit) {
+        viewModel.loadSiswa()
+    }
+
+    Scaffold(
+        modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
+        topBar = {
+            SiswaTopAppBar(
+                title = stringResource(DestinasiHome.titleRes),
+                canNavigateBack = false,
+                scrollBehavior = scrollBehavior,
+                onRefresh = { viewModel.loadSiswa() } // HUBUNGKAN KE TOMBOL REFRESH
+            )
+        },
