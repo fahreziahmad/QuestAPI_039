@@ -133,3 +133,11 @@ fun LoadingScreen(modifier: Modifier = Modifier) {
         CircularProgressIndicator()
     }
 }
+
+@Composable
+fun ErrorScreen(retryAction: () -> Unit, modifier: Modifier = Modifier) {
+    Column(modifier = modifier, verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(text = "Gagal memuat data")
+        Button(onClick = retryAction) { Text("Coba Lagi") }
+    }
+}
