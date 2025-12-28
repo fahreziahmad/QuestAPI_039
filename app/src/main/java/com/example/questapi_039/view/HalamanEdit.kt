@@ -18,3 +18,12 @@ fun EditSiswaScreen(
     modifier: Modifier = Modifier,
     viewModel: EditViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ) {
+    val coroutineScope = rememberCoroutineScope()
+    Scaffold(
+        topBar = {
+            SiswaTopAppBar(
+                title = "Edit Siswa",
+                canNavigateBack = true,
+                navigateUp = navigateBack
+            )
+        }
