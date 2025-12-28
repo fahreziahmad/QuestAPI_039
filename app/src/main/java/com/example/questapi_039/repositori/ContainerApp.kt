@@ -20,3 +20,18 @@ class DefaultContainerApp : ContainerApp {
     private val logging = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
     }
+
+    private val klien = OkHttpClient.Builder()
+        .addInterceptor(logging)
+        .build()
+
+    private val retrofit: Retrofit = Retrofit.Builder()
+        .baseUrl(baseurl)
+        .addConverterFactory(
+            Json {
+                ignoreUnknownKeys = true
+                isLenient = true
+            }.asConverterFactory("application/json".toMediaType())
+        )
+        .client(klien)
+        .build()
