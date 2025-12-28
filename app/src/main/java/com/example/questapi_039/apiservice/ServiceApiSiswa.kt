@@ -11,3 +11,14 @@ interface ServiceApiSiswa {
     @POST("insertTM.php")
     suspend fun postSiswa(@Body dataSiswa: DataSiswa): Response<Void>
 
+    // Tambahan untuk Detail dan Edit
+    @GET("getSiswaById.php")
+    suspend fun getSiswaById(@Query("id") id: Int): DataSiswa
+
+    @POST("updateSiswa.php")
+    suspend fun updateSiswa(@Query("id") id: Int, @Body dataSiswa: DataSiswa): Response<Void>
+
+    @DELETE("deleteSiswa.php")
+    suspend fun deleteSiswa(@Query("id") id: Int): Response<Void>
+
+}
