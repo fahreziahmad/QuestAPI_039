@@ -111,3 +111,18 @@ fun ListSiswa(
         }
     }
 }
+
+@Composable
+fun ItemSiswa(siswa: DataSiswa, modifier: Modifier = Modifier) {
+    Card(modifier = modifier, elevation = CardDefaults.cardElevation(2.dp)) {
+        Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                Text(text = siswa.nama, style = MaterialTheme.typography.titleLarge)
+                Spacer(Modifier.weight(1f))
+                Icon(imageVector = Icons.Default.Phone, contentDescription = null)
+                Text(text = siswa.telpon, style = MaterialTheme.typography.titleMedium)
+            }
+            Text(text = siswa.alamat, style = MaterialTheme.typography.bodyMedium)
+        }
+    }
+}
