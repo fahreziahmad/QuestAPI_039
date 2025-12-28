@@ -64,3 +64,17 @@ fun DataSiswaApp(
                 }
             )
         }
+
+        // Edit Screen - FIXED itemIdArg
+        composable(
+            route = DestinasiEdit.routeWithArgs,
+            arguments = listOf(navArgument(DestinasiEdit.itemIdArg) {
+                type = NavType.IntType
+            })
+        ) {
+            EditSiswaScreen(
+                navigateBack = { navController.popBackStack() }
+            )
+        }
+    }
+}
