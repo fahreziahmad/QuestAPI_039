@@ -126,3 +126,10 @@ fun ItemSiswa(siswa: DataSiswa, modifier: Modifier = Modifier) {
         }
     }
 }
+
+@Composable
+fun LoadingScreen(modifier: Modifier = Modifier) {
+    Box(modifier = modifier, contentAlignment = Alignment.Center) {
+        CircularProgressIndicator()
+    }
+}
