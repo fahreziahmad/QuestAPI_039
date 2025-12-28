@@ -62,3 +62,10 @@ fun DetailSiswaScreen(
                         Text(text = "Gagal memuat data.", color = Color.Red)
                     }
                 }
+                is DetailUiState.Success -> {
+                    ItemDetailSiswa(siswa = state.dataSiswa)
+                }
+            }
+        }
+    }
+}
