@@ -39,3 +39,8 @@ class EditViewModel(
             isEntryValid = true
         )
     }
+
+    suspend fun updateSiswa() {
+        repositoryDataSiswa.editSatuSiswa(idSiswa, uiStateSiswa.detailSiswa.toDataSiswa())
+    }
+}
