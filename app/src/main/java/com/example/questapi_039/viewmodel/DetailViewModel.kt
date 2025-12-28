@@ -31,3 +31,14 @@ class DetailViewModel(
     init {
         getDetailSiswa()
     }
+
+    fun getDetailSiswa() {
+        viewModelScope.launch {
+            detailUiState = DetailUiState.Loading
+            detailUiState = try {
+                DetailUiState.Success(repositoryDataSiswa.getSatuSiswa(idSiswa))
+            } catch (e: Exception) {
+                DetailUiState.Error
+            }
+        }
+    }
